@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class MagicWord {
-    private static final String[] WORDS = {"Gladiador", "Estreno", "Magnitud"};
+    private static final String[] WORDS = {"gladiador", "estreno", "magnitud"};
     private int attemps;
     private String hiddenWord;
     private boolean[] corectLetter;
