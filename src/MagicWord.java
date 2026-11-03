@@ -8,12 +8,16 @@ public class MagicWord {
 
     public MagicWord() {
         int random = (int)(Math.random()*WORDS.length);
-        attemps = 0;
+        attemps = 1;
         hiddenWord = WORDS[random];
         corectLetter = new boolean[hiddenWord.length()];
         for (int i = 0; i < corectLetter.length; i++){
             corectLetter[i] = false;
         }
+    }
+
+    public int getAttemps(){
+        return attemps++;
     }
 
     @Override
@@ -32,12 +36,12 @@ public class MagicWord {
     public void shoot(String wordOrLetter){
         if (wordOrLetter.length() == 1){
             for (int i = 0; i < hiddenWord.length(); i++){
-                if (){
-
+                if (wordOrLetter.charAt(0) == hiddenWord.charAt(i)){
+                    corectLetter[i] = true;
                 }
             }
         }else {
-
+            System.out.println("");
         }
     }
 }
