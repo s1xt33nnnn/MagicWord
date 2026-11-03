@@ -33,6 +33,17 @@ public class MagicWord {
         return s;
     }
 
+    public boolean win(){
+        for (int i = 0; i <hiddenWord.length(); i++){
+        if (corectLetter[i] == true){
+
+        }else {
+            System.out.println("");
+        }
+        }
+        return ;
+    }
+
     public void shoot(String wordOrLetter){
         if (wordOrLetter.length() == 1){
             for (int i = 0; i < hiddenWord.length(); i++){
@@ -41,7 +52,11 @@ public class MagicWord {
                 }
             }
         }else {
-            System.out.println("");
+            if (hiddenWord.equals(wordOrLetter)){
+                for (int i = 0; i < corectLetter.length; i++){
+                    corectLetter[i] = true;
+                }
+            }
         }
     }
 }
