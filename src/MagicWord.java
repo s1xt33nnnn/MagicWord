@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MagicWord {
     private static final String[] WORDS = {"Gladiador","Estreno","Magnitud"};
     private int attemps;
@@ -5,15 +7,37 @@ public class MagicWord {
     private boolean[] corectLetter;
 
     public MagicWord() {
-        int a = (int)(Math.random()*WORDS.length);
+        int random = (int)(Math.random()*WORDS.length);
         attemps = 0;
-        hiddenWord = WORDS[a];
+        hiddenWord = WORDS[random];
         corectLetter = new boolean[hiddenWord.length()];
-        for (int i = 0; i < hiddenWord.length(); i++){
+        for (int i = 0; i < corectLetter.length; i++){
             corectLetter[i] = false;
         }
     }
 
-    public
+    @Override
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < hiddenWord.length(); i++){
+            if (corectLetter[i]){
+                s = s + hiddenWord.charAt(i);
+            }else {
+                s = s + "_";
+            }
+        }
+        return s;
+    }
 
+    public void shoot(String wordOrLetter){
+        if (wordOrLetter.length() == 1){
+            for (int i = 0; i < hiddenWord.length(); i++){
+                if (){
+
+                }
+            }
+        }else {
+
+        }
+    }
 }
