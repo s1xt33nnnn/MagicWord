@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MagicWord {
     private static final int MAX_ATTEMPS = 10;
-    private static final String[] WORDS = {"gladiador", "estreno", "magnitud","waterpolo", "estanque", "cabeza", "batalla"};
+    private static final String[] WORDS = {"gladiador", "estreno", "magnitud", "waterpolo", "estanque", "cabeza", "batalla"};
     private int fails;
     private String hiddenWord;
     private boolean[] corectLetter;
@@ -36,7 +36,7 @@ public class MagicWord {
         return s;
     }
 
-    public String getHiddenWord(){
+    public String getHiddenWord() {
         return hiddenWord;
     }
 
@@ -49,8 +49,8 @@ public class MagicWord {
         return true;
     }
 
-    public boolean looses(){
-        return  fails > MAX_ATTEMPS;
+    public boolean looses() {
+        return fails > MAX_ATTEMPS;
     }
 
     public void shoot(String wordOrLetter) {
@@ -61,22 +61,22 @@ public class MagicWord {
                     corectLetter[i] = true;
                     acierto = true;
                 }
-                }if (acierto = false){
+            }
+            if (!acierto) {
                 fails++;
             }
-            }
-         else {
+        } else {
             if (hiddenWord.equals(wordOrLetter)) {
                 for (int i = 0; i < corectLetter.length; i++) {
                     corectLetter[i] = true;
                 }
             } else {
-                fails = MAX_ATTEMPS;
+                fails = MAX_ATTEMPS + 1;
             }
         }
     }
 
     public int getFails() {
-        return fails++;
+        return fails;
     }
 }
